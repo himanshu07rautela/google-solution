@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(30, 91, 223);
+    overflow: hidden;
+}
+
+#map {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#map svg {
+    width: 100%;
+    height: 100%;
+}
+
+.clickable-box {
+    position: absolute;
+    fill: none;
+    stroke: rgba(255, 0, 0, 0.5); /* Adjust the outline color and transparency as needed */
+    stroke-width: 15; /* Adjust the outline thickness as needed */
+    cursor: pointer;
+    transition: stroke 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.clickable-box:hover {
+    stroke: rgba(76, 0, 255, 0.8); /* Adjust the hover outline color and transparency as needed */
+   
+}
+
+
+/* button  */
+#name {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: fit-content;
+    opacity: 0;
+    border-radius: 5px;
+    border: 3px solid rgb(245, 128, 128);
+    padding: 0px 5px;
+    font-size: 1.5rem;
+
+}
+
+
+ #name {
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        width: fit-content;
+        opacity: 0;
+        border-radius: 5px;
+        border: 3px solid rgb(245, 128, 128);
+        padding: 0px 5px;
+        font-size: 1.5rem;
+
+    }
+
+
+    #timeCont{
+        background-color: white;
+        width: fit-content;
+        font-size: 1.5rem;
+        padding: 5px 5px;
+        border-radius: 5px;
+        border: 3px solid rgb(245, 128, 128);        
+    }
+    
+
+    svg path {
+        cursor: pointer;
+    }
+    svg path :hover{
+        fill: lightgreen;
+
+    }
