@@ -17,10 +17,15 @@
     }
 
     body {
+        /* max-width: 80%; */
+        /* margin: 10px; */
+        padding: 5%;
         overflow-x: hidden;
         overflow-y: hidden;
-        background-color: rgb(39, 127, 235);
+        background-color: transparent;
         z-index: 99;
+        left: 50%;
+        top: 50%;
     }
 
     #name {
@@ -52,26 +57,7 @@
     svg path:hover{
         fill: lightgreen;
     }
-     .box {
-            position: absolute;
-            background-color: transparent;
-            border: 2px solid #fff; /* Adjust the border properties as needed */
-            box-sizing: border-box;
-            z-index: -1;
-            border-radius: 5%;
-        }
-
-        /* Top 4 boxes */
-        .box:nth-child(1) { top: 0%; left: 0%; width: 25%; height: 50%; }
-        .box:nth-child(2) { top: 0; left: 25%; width: 25%; height: 50%; }
-        .box:nth-child(3) { top: 0; left: 50%; width: 25%; height: 50%; }
-        .box:nth-child(4) { top: 0; left: 75%; width: 25%; height: 50%; }
-
-        /* Bottom 4 boxes */
-        .box:nth-child(5) { bottom: 0; left: 0%; width: 25%; height: 50%; }
-        .box:nth-child(6) { bottom: 0;left: 25%; width: 25%; height: 50%; }
-        .box:nth-child(7) { bottom: 0; left: 50%; width: 25%; height: 50%; }
-        .box:nth-child(8) { bottom: 0; left: 75%; width: 25%; height: 50%; }
+     
     
 
 </style>
@@ -84,14 +70,7 @@
         <p id="namep">Name</p>
     </div>
 
-  <div class="box"></div>  
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
+  
   
 
 
