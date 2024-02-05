@@ -10,11 +10,42 @@
 
 </head>
 
+
+
 <style>
     * {
         margin: 0;
         padding: 0;
     }
+
+
+    #searchHelpText {
+        position: fixed;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    #searchHelpText p {
+        margin: 0;
+        font-size: 1.2rem;
+    }
+
+    #searchDiv {
+        position: relative;
+        text-align: center;
+    }
+
+    #search {
+        padding: 5px;
+        margin-right: 5px;
+    }
+
+    #searchBtn {
+        padding: 5px 10px;
+    }
+
 
     body {
         /* max-width: 80%; */
@@ -22,7 +53,8 @@
         padding: 5%;
         overflow-x: hidden;
         overflow-y: hidden;
-        background-color: transparent;
+        /*background-color: transparent;*/
+        /* background-color: aqua; */
         z-index: 99;
         left: 50%;
         top: 50%;
@@ -70,7 +102,13 @@
         <p id="namep">Name</p>
     </div>
 
-  
+    <div id="searchHelpText">
+        <p>Having difficulty in finding your country?</p>
+        <div id="searchDiv">
+            <input type="text" id="search" placeholder="Search for your country">
+            <button id="searchBtn">Search</button>
+        </div>
+    </div>
   
 
 
@@ -1637,6 +1675,7 @@
                 y = j.clientY
                 document.getElementById('name').style.top = y-60  + 'px'
                 document.getElementById('name').style.left = x +10 + 'px'
+
             }
             const classes=e.className.baseVal.replace(/ /g, '.')         
             document.querySelectorAll(`.${classes}`).forEach(country =>{
@@ -1644,7 +1683,14 @@
             })
             document.getElementById("name").style.opacity = 1
             
-            document.getElementById("namep").innerText = e.id
+            document.getElementById("name").innerText = e.id
+
+            // Change background image when hovering over a country
+    document.getElementById("body").style.backgroundImage = `url(country-images/${e.id}.png)`; // Replace with the actual path to your images
+    document.getElementById("body").style.backgroundSize = "cover";
+    document.getElementById("body").style.backgroundRepeat = "no-repeat";
+    document.getElementById("body").style.backgroundPosition = "center";
+
         })
         e.addEventListener("mouseleave", function () {
             const classes=e.className.baseVal.replace(/ /g, '.')
@@ -1652,6 +1698,9 @@
                 country.style.fill = "#ececec"
             })
             document.getElementById("name").style.opacity = 0
+
+            // Clear the background image when leaving the country
+    document.getElementById("body").style.backgroundImage = "";
         })
 
         e.addEventListener("click",function(){
@@ -1659,6 +1708,16 @@
         })
 
     })
+
+    document.getElementById("searchBtn").addEventListener("click", function () {
+            country = document.getElementById("search").value
+            document.querySelectorAll(`.allPaths`).forEach(e => {
+                e.style.fill = "#ececec"
+            })
+            document.querySelectorAll(`#${country}`).forEach(e => {
+                e.style.fill = "red"
+            })
+        });
 
     // document.getElementById("searchBtn").addEventListener("click", function () {
     //     country = document.getElementById("search").value
